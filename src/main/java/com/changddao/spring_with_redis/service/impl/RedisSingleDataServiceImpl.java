@@ -47,7 +47,7 @@ public class RedisSingleDataServiceImpl implements RedisSingleDataService {
      */
     @Override
     public String getSingleData(String key) {
-        if(redisHandler.getValueOperations().get(key)==null) return "";
+        if(redisHandler.getValueOperations().get(key)==null) return "redis서버에 존재하지 않는 key입니다.";
         return String.valueOf(redisHandler.getValueOperations().get(key));
 
     }
